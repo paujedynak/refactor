@@ -116,7 +116,7 @@ def associations_test(meth_data, y, model_append = None):
     else:
         model_append = ones(len(y))
     observed_pvalues = zeros(meth_data.sites_size)
-    for site_i in xrange(meth_data.sites_size):
+    for site_i in range(meth_data.sites_size):
         c = column_stack((meth_data.data[site_i,:], model_append))
         mod = sm.OLS(y, c)
         res = mod.fit()
